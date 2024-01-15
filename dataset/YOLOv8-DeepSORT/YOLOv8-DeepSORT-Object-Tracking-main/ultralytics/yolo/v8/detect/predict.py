@@ -192,7 +192,7 @@ def get_direction(point1, point2):
 
 
 def draw_boxes(img, bbox, names, object_id, identities=None, offset=(0, 0)):
-    cv2.line(img, line[0], line[1], (46, 162, 112), 3)
+    #cv2.line(img, line[0], line[1], (46, 162, 112), 3)
 
     height, width, _ = img.shape
     # remove tracked point from buffer if object is lost
@@ -264,22 +264,22 @@ def draw_boxes(img, bbox, names, object_id, identities=None, offset=(0, 0)):
             cv2.line(img, data_deque[id][i - 1], data_deque[id][i], color, thickness)
 
         # 4. Display Count in top right corner
-        for idx, (key, value) in enumerate(object_counter1.items()):
-            cnt_str = str(key) + ":" + str(value)
-            cv2.line(img, (width - 500, 25), (width, 25), [85, 45, 255], 40)
-            cv2.putText(img, f'Number of Vehicles Entering', (width - 500, 35), 0, 1, [225, 255, 255], thickness=2,
-                        lineType=cv2.LINE_AA)
-            cv2.line(img, (width - 150, 65 + (idx * 40)), (width, 65 + (idx * 40)), [85, 45, 255], 30)
-            cv2.putText(img, cnt_str, (width - 150, 75 + (idx * 40)), 0, 1, [255, 255, 255], thickness=2,
-                        lineType=cv2.LINE_AA)
+        #for idx, (key, value) in enumerate(object_counter1.items()):
+        #    cnt_str = str(key) + ":" + str(value)
+        #    cv2.line(img, (width - 500, 25), (width, 25), [85, 45, 255], 40)
+        #    cv2.putText(img, f'Number of Vehicles Entering', (width - 500, 35), 0, 1, [225, 255, 255], thickness=2,
+        #                lineType=cv2.LINE_AA)
+        #    cv2.line(img, (width - 150, 65 + (idx * 40)), (width, 65 + (idx * 40)), [85, 45, 255], 30)
+        #    cv2.putText(img, cnt_str, (width - 150, 75 + (idx * 40)), 0, 1, [255, 255, 255], thickness=2,
+        #                lineType=cv2.LINE_AA)
 
-        for idx, (key, value) in enumerate(object_counter.items()):
-            cnt_str1 = str(key) + ":" + str(value)
-            cv2.line(img, (20, 25), (500, 25), [85, 45, 255], 40)
-            cv2.putText(img, f'Numbers of Vehicles Leaving', (11, 35), 0, 1, [225, 255, 255], thickness=2,
-                        lineType=cv2.LINE_AA)
-            cv2.line(img, (20, 65 + (idx * 40)), (127, 65 + (idx * 40)), [85, 45, 255], 30)
-            cv2.putText(img, cnt_str1, (11, 75 + (idx * 40)), 0, 1, [225, 255, 255], thickness=2, lineType=cv2.LINE_AA)
+        #for idx, (key, value) in enumerate(object_counter.items()):
+        #    cnt_str1 = str(key) + ":" + str(value)
+        #    cv2.line(img, (20, 25), (500, 25), [85, 45, 255], 40)
+        #    cv2.putText(img, f'Numbers of Vehicles Leaving', (11, 35), 0, 1, [225, 255, 255], thickness=2,
+        #                lineType=cv2.LINE_AA)
+        #    cv2.line(img, (20, 65 + (idx * 40)), (127, 65 + (idx * 40)), [85, 45, 255], 30)
+        #    cv2.putText(img, cnt_str1, (11, 75 + (idx * 40)), 0, 1, [225, 255, 255], thickness=2, lineType=cv2.LINE_AA)
 
     return img
 
